@@ -1,0 +1,31 @@
+---
+galaxy_info:
+  author: Jeffrey James
+  description: A role for managing sudo.
+  company: Smarsh
+  license: MIT
+  platforms:
+  - name: GenericUNIX
+    versions:
+    - all
+  - name: GenericBSD
+    versions:
+    - all
+  - name: GenericLinux
+    versions:
+    - all
+  galaxy_tags:
+  - sudo
+  - system
+
+allow_duplicates: yes
+
+dependencies:
+  - role: base-packages
+    package_state: present
+    package_list:
+      - name: sudo
+    package_list_host: []
+    package_list_group: []
+    when:
+      - sudo_package|bool

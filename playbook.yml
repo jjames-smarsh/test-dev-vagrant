@@ -1,0 +1,27 @@
+# role: activemq
+#
+# common configuration to all our machines
+#
+# authentication
+# login defaults
+# sudo
+#
+
+---
+- name: Setup Ansible Control and Basic Configurations
+  hosts: all
+  become: true
+  # roles:
+  #   - yum-repos-setup
+  #   - login-defs
+  #   - sudo-setup
+  #   - autofs-setup
+  #   - amq
+  tasks:
+    - name: Distribution
+      debug: msg="{{ ansible_distribution }}"
+    - name: Distribution version
+      debug: msg="{{ ansible_distribution_version}}"
+    - name: Distribution major version
+      debug: msg="{{ ansible_distribution_major_version }}"
+

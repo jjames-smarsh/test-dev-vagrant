@@ -1,0 +1,31 @@
+# role: activemq
+#
+# common configuration to all our machines
+#
+# authentication
+# login defaults
+# sudo
+#
+
+---
+
+- name: Setup Ansible Control and Basic Configurations
+  hosts: all
+  gather_facts: false
+  become: yes
+  become_user: vagrant
+  become_method: runas
+  # roles:
+  #   - yum-repos-setup
+  #   - login-defs
+  #   - sudo-setup
+  #   - autofs-setup
+  #   - amq
+  tasks:
+    - name: List Processes
+      raw: tasklist /FO CSV
+      register: result
+    - name: Print Processes
+      debug: var=result.stdout_lines
+    - name: Result
+      debug: msg="Processes listed"

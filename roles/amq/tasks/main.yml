@@ -1,0 +1,22 @@
+---
+- name: Install AMQ
+  yum:
+    name: ['java-1.8.0-openjdk','activemq-cpp']
+    state: latest
+  when: ansible_distribution == "CentOS"
+
+- name: Install AMQ Ubuntu
+  apt:
+    name: ['openjdk-7-jre','activemq']
+    state: present
+  when: ansible_pkg_mgr == 'apt'
+
+# - name: Mount AMQ NFS volume 
+#   mount:
+#     fstype: "nfs,rw,bg,hard,intr,tcp,resvport"
+#     opts: defaults
+#     dump: 0
+#     passno: 0
+#     state: mounted
+#     src: dev-nanfs-01.smarshdev.com:/vol/development/activemq
+#     path: "/mnt/amq-data-01"

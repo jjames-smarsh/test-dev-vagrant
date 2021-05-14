@@ -1,0 +1,7 @@
+---
+# Role tasks
+
+- name: Check platform
+  _check_platform:
+  tags:
+    - role::check_platform

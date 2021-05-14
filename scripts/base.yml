@@ -1,0 +1,17 @@
+# role: base
+#
+# common configuration to all our machines
+#
+#	- authentication
+#	- login defaults
+#	- sudo
+#
+
+---
+- name: Update the repository cache and update package "nginx" to latest version using default release squeeze-backport
+  hosts: all
+  become: true
+  tasks:
+    - apt:
+        name: activemq
+        update_cache: yes

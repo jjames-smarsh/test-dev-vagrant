@@ -1,0 +1,23 @@
+galaxy_info:
+  author: Jeffrey James
+  company: Smarsh 
+
+  description: Installs and configures autofs. Based on cmprescott/ansible-role-autofs with bugfixes
+  license: BSD
+  platforms:
+  - name: GenericLinux
+    versions:
+    - any
+  categories:
+  - system
+
+  galaxy_tags:
+    - autofs
+    - smb
+    - glusterfs
+    - cifs
+    - nfs
+    - network-mounts
+    - network-shares
+
+dependencies: []
